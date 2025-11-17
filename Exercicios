@@ -1,0 +1,350 @@
+EXERCÍCIO 1 — podeDirigir()
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1</title>
+</head>
+<body>
+
+<h2>1. Verificar se pode dirigir</h2>
+
+<input id="idade" placeholder="Digite a idade">
+<button onclick="mostrarPodeDirigir()">Verificar</button>
+
+<p id="resultado"></p>
+
+<script>
+function podeDirigir(idade) {
+    if (idade >= 18) return "Pode ser habilitado(a)";
+    return "Ainda não pode";
+}
+
+function mostrarPodeDirigir() {
+    const idade = Number(document.getElementById("idade").value);
+    document.getElementById("resultado").innerText = podeDirigir(idade);
+}
+</script>
+
+</body>
+</html>
+
+
+ EXERCÍCIO 2 — encontrarMaiorEntreTres()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 2</title></head>
+<body>
+
+<h2>2. Maior entre três números</h2>
+
+<input id="n1" placeholder="N1">
+<input id="n2" placeholder="N2">
+<input id="n3" placeholder="N3">
+<button onclick="mostrarMaiorTres()">Verificar</button>
+
+<p id="resultado"></p>
+
+<script>
+function encontrarMaiorEntreTres(a, b, c) {
+    if (a > b && a > c) return a;
+    if (b > a && b > c) return b;
+    return c;
+}
+
+function mostrarMaiorTres() {
+    const a = Number(document.getElementById("n1").value);
+    const b = Number(document.getElementById("n2").value);
+    const c = Number(document.getElementById("n3").value);
+
+    document.getElementById("resultado").innerText =
+        "Maior número: " + encontrarMaiorEntreTres(a, b, c);
+}
+</script>
+
+</body>
+</html>
+
+
+EXERCÍCIO 3 — classificarMoeda()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 3</title></head>
+<body>
+
+<h2>3. Classificar Moeda</h2>
+
+<input id="moeda" placeholder="Ex: 0.25">
+<button onclick="mostrarMoeda()">Classificar</button>
+
+<p id="resultado"></p>
+
+<script>
+function classificarMoeda(valor) {
+    if (valor === 0.01) return "Um Centavo";
+    if (valor === 0.05) return "Cinco Centavos";
+    if (valor === 0.10) return "Dez Centavos";
+    if (valor === 0.25) return "Vinte e Cinco Centavos";
+    if (valor === 0.50) return "Cinquenta Centavos";
+    if (valor === 1.00) return "Um Real";
+    return "Valor Desconhecido";
+}
+
+function mostrarMoeda() {
+    const valor = Number(document.getElementById("moeda").value);
+    document.getElementById("resultado").innerText = classificarMoeda(valor);
+}
+</script>
+
+</body>
+</html>
+
+
+EXERCÍCIO 4 — senhaForte()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 4</title></head>
+<body>
+
+<h2>4. Verificar Senha Forte</h2>
+
+<input id="senha" placeholder="Digite a senha">
+<button onclick="mostrarSenha()">Verificar</button>
+
+<p id="resultado"></p>
+
+<script>
+function senhaForte(senha) {
+    return senha.length > 8 && senha !== "12345678";
+}
+
+function mostrarSenha() {
+    const senha = document.getElementById("senha").value;
+    document.getElementById("resultado").innerText =
+        senhaForte(senha) ? "Senha forte" : "Senha fraca";
+}
+</script>
+
+</body>
+</html>
+
+
+EXERCÍCIO 5 — checarTemperatura()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 5</title></head>
+<body>
+
+<h2>5. Checar Temperatura</h2>
+
+<input id="temp" placeholder="Temperatura °C">
+<button onclick="mostrarTemp()">Checar</button>
+
+<p id="resultado"></p>
+
+<script>
+function checarTemperatura(t) {
+    if (t < 10) return "Alerta de Frio";
+    if (t <= 25) return "Temperatura Ideal";
+    return "Alerta de Calor";
+}
+
+function mostrarTemp() {
+    const t = Number(document.getElementById("temp").value);
+    document.getElementById("resultado").innerText = checarTemperatura(t);
+}
+</script>
+
+</body>
+</html>
+
+
+EXERCÍCIO 6 — nomeDoDia()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 6</title></head>
+<body>
+
+<h2>6. Nome do dia da semana</h2>
+
+<input id="dia" placeholder="1 a 7">
+<button onclick="mostrarDia()">Mostrar</button>
+
+<p id="resultado"></p>
+
+<script>
+function nomeDoDia(n) {
+    switch(n) {
+        case 1: return "Domingo";
+        case 2: return "Segunda";
+        case 3: return "Terça";
+        case 4: return "Quarta";
+        case 5: return "Quinta";
+        case 6: return "Sexta";
+        case 7: return "Sábado";
+        default: return "Número inválido";
+    }
+}
+
+function mostrarDia() {
+    const n = Number(document.getElementById("dia").value);
+    document.getElementById("resultado").innerText = nomeDoDia(n);
+}
+</script>
+
+</body>
+</html>
+
+
+EXERCÍCIO 7 — tipoTriangulo()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 7</title></head>
+<body>
+
+<h2>7. Tipo de Triângulo</h2>
+
+<input id="l1" placeholder="Lado 1">
+<input id="l2" placeholder="Lado 2">
+<input id="l3" placeholder="Lado 3">
+<button onclick="mostrarTriangulo()">Classificar</button>
+
+<p id="resultado"></p>
+
+<script>
+function tipoTriangulo(a, b, c) {
+    if (a === b && b === c) return "Equilátero";
+    if (a === b || a === c || b === c) return "Isósceles";
+    return "Escaleno";
+}
+
+function mostrarTriangulo() {
+    const a = Number(document.getElementById("l1").value);
+    const b = Number(document.getElementById("l2").value);
+    const c = Number(document.getElementById("l3").value);
+
+    document.getElementById("resultado").innerText =
+        tipoTriangulo(a, b, c);
+}
+</script>
+
+</body>
+</html>
+
+
+EXERCÍCIO 8 — gerarNomeCompleto()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 8</title></head>
+<body>
+
+<h2>8. Nome Completo</h2>
+
+<input id="pnome" placeholder="Primeiro nome">
+<input id="snome" placeholder="Sobrenome">
+<button onclick="mostrarNome()">Gerar</button>
+
+<p id="resultado"></p>
+
+<script>
+function gerarNomeCompleto(obj) {
+    return obj.primeiroNome + " " + obj.sobrenome;
+}
+
+function mostrarNome() {
+    const p = document.getElementById("pnome").value;
+    const s = document.getElementById("snome").value;
+
+    document.getElementById("resultado").innerText =
+        gerarNomeCompleto({ primeiroNome: p, sobrenome: s });
+}
+</script>
+
+</body>
+</html>
+
+
+EXERCÍCIO 9 — calcularMediaSimples()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 9</title></head>
+<body>
+
+<h2>9. Média simples</h2>
+
+<input id="nota1" placeholder="Nota 1">
+<input id="nota2" placeholder="Nota 2">
+<button onclick="mostrarMedia()">Calcular</button>
+
+<p id="resultado"></p>
+
+<script>
+function calcularMediaSimples(n1, n2) {
+    const media = (n1 + n2) / 2;
+    return media >= 7 ? "Aprovado" : "Reprovado";
+}
+
+function mostrarMedia() {
+    const n1 = Number(document.getElementById("nota1").value);
+    const n2 = Number(document.getElementById("nota2").value);
+
+    document.getElementById("resultado").innerText =
+        calcularMediaSimples(n1, n2);
+}
+</script>
+
+</body>
+</html>
+
+
+ EXERCÍCIO 10 — formatarTelefone()
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Exercício 10</title></head>
+<body>
+
+<h2>10. Formatar Telefone</h2>
+
+<input id="tel" placeholder="Digite o telefone">
+<button onclick="mostrarTelefone()">Formatar</button>
+
+<p id="resultado"></p>
+
+<script>
+function formatarTelefone(numero) {
+    const parte1 = numero.slice(0, 4);
+    const parte2 = numero.slice(4);
+    return parte1 + "-" + parte2;
+}
+
+function mostrarTelefone() {
+    const numero = document.getElementById("tel").value;
+    const f = formatarTelefone(numero);
+
+    document.getElementById("resultado").innerText =
+        "Telefone formatado: " + f;
+}
+</script>
+
+</body>
+</html>
